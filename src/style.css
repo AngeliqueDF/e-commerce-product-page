@@ -35,7 +35,6 @@ img {
 }
 
 .button-image {
-	background-image: url("./images/icon-cart.svg");
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 2rem;
@@ -53,8 +52,10 @@ header {
 	margin: 0 auto;
 }
 
-#menu-toggle {
+#open-mobile-menu {
 	margin-right: 1rem;
+	background-image: url("./images/icon-menu.svg");
+	margin: 0 1rem 0 0;
 }
 
 header h1 {
@@ -66,13 +67,16 @@ header nav {
 }
 
 .header-menu {
-	position: absolute;
+	position: fixed;
+	background-color: white;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background-color: white;
-	width: 70%;
-	color: black;
+	width: 65%;
+}
+
+#close-mobile-menu {
+	background-image: url("./images/icon-close.svg");
 }
 
 .header-links li {
