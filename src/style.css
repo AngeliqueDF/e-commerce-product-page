@@ -41,7 +41,7 @@ img {
 }
 
 .hide {
-	display: none;
+	display: none !important;
 }
 
 .button-image {
