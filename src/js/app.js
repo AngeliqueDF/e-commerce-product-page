@@ -1,7 +1,22 @@
-window.addEventListener("DOMContentLoaded", (event) => {
-	const menuToggle = document.getElementById("menu-toggle");
-	menuToggle.addEventListener("click", (event) => {
-		const headerNav = document.querySelector(".mobile-menu");
-		headerNav.classList.toggle("hide");
+/**
+ * Adds a click event on the toggler to toggle the .hide class on the element to hide.
+ * Iterates through toggler and toggledElements in case they reference several elements.
+ * @param {string} togglerElementSelector
+ * @param {string} elementToHideSelector
+ */
+const toggleHide = (togglerElementSelector, elementToHideSelector) => {
+	const toggler = document.querySelectorAll(togglerElementSelector);
+	const toggledElements = document.querySelectorAll(elementToHideSelector);
+	toggler.forEach((element) => {
+		element.addEventListener("click", () => {
+			toggledElements.forEach((toggledElement) => {
+				toggledElement.classList.toggle("hide");
+			});
+		});
 	});
+};
+
+window.addEventListener("DOMContentLoaded", () => {
+	toggleHide(".menu-toggle", ".header-menu");
+	toggleHide("#shopping-cart-icon", "#shopping-cart");
 });
