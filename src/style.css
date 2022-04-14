@@ -60,6 +60,7 @@ header {
 	align-items: center;
 	width: 90%;
 	margin: 0 auto;
+	height: 3rem;
 }
 
 #open-mobile-menu {
@@ -70,6 +71,10 @@ header {
 
 header h1 {
 	margin-right: 3rem;
+}
+
+#avatar {
+	width: 1.5rem;
 }
 
 header nav {
@@ -107,7 +112,9 @@ header nav {
 	justify-content: space-between;
 }
 
-#shopping-cart {
+/* SHOPPING CART */
+
+#shopping-cart-icon {
 	background-image: url("./images/icon-cart.svg");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -117,6 +124,135 @@ header nav {
 	margin-right: 1rem;
 }
 
-#avatar {
-	width: 1.5rem;
+#shopping-cart {
+	position: absolute;
+	height: 33vh;
+	width: 95%;
+	margin: 0 auto;
+	top: 5%;
+	top: 3.5rem;
+	right: 0;
+	left: 0;
+	background-color: white;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+}
+
+#shopping-cart legend {
+	padding: 1.5rem 0;
+	margin-left: 1.5rem;
+	/* padding-right: -10rem; */
+	/* border-bottom: 1px solid grey;*/
+	margin-bottom: 1.5rem;
+	width: 40%;
+}
+
+#shopping-cart fieldset legend::after {
+	content: "";
+	background-color: lightgray;
+	height: 1px;
+	width: 100%;
+	position: absolute;
+	top: 4rem;
+	left: 0;
+	right: 0;
+}
+
+.shopping-cart-product-row,
+#checkout-button {
+	/* width: 80%; */
+	margin: 0 1.5rem 2rem;
+}
+
+#checkout-button {
+	background-color: orange;
+	padding: 1rem;
+}
+
+.shopping-cart-product-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	/* align-items: center; */
+}
+
+.shopping-cart-product-row img {
+	height: 4rem;
+	width: 4rem;
+}
+
+.shopping-cart-product-information {
+	display: flex;
+	flex-direction: column;
+}
+
+.shopping-cart-product-information {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.5rem 0;
+	margin-right: auto;
+	margin-left: 1rem;
+}
+
+#cart-remove-product {
+	background-color: lightgray;
+	color: white;
+	width: 1rem;
+	height: 1rem;
+	margin: auto 0;
+}
+
+/* PRODUCT IMAGES */
+
+.image-thumbnails {
+	display: none;
+}
+
+/* PRODUCT INFORMATION */
+article {
+	display: flex;
+	flex-direction: column;
+}
+
+#product-name {
+	order: 2;
+
+	font-size: 2rem;
+}
+
+#product-brand {
+	order: 1;
+
+	color: orange;
+	text-transform: uppercase;
+}
+
+#product-description {
+	order: 3;
+}
+
+#pricing-information {
+	order: 4;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+article form {
+	order: 5;
+}
+
+.product-quantity-control {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 1rem;
+	background-color: lightgray;
+	color: black;
+}
+
+.product-quantity-control button {
+	color: orange;
 }
