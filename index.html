@@ -17,13 +17,18 @@
 	</head>
 	<body>
 		<header>
-			<button class="button-image menu-toggle" id="open-mobile-menu"></button>
+			<button
+				aria-label="Open mobile menu."
+				class="button-image menu-toggle"
+				id="open-mobile-menu"
+			></button>
 			<h1>
 				<a href="#"><img src="./src/images/logo.svg" alt="sneakers" /></a>
 			</h1>
 
 			<nav class="header-menu hide">
 				<button
+					aria-label="Close mobile menu"
 					class="button-image menu-toggle"
 					id="close-mobile-menu"
 				></button>
@@ -36,9 +41,58 @@
 				</ul>
 			</nav>
 
-			<button id="shopping-cart" value="shopping-cart"></button>
+			<button
+				id="shopping-cart-icon"
+				aria-label="Display shopping cart"
+				value="shopping-cart"
+			></button>
 
 			<img src="./src/images/image-avatar.png" alt="" id="avatar" />
+
+			<form id="shopping-cart" class="hide">
+				<fieldset>
+					<legend>Cart</legend>
+
+					<div class="shopping-cart-product-row">
+						<img src="./src/images/image-product-1-thumbnail.jpg" alt="" />
+
+						<input
+							type="hidden"
+							value="Autumn limited edition"
+							name="product-cart-name"
+							class="product-cart-name"
+							id="product-cart-name"
+						/>
+
+						<input
+							type="hidden"
+							value="125.00"
+							name="product-price"
+							id="product-price"
+						/>
+
+						<input
+							type="hidden"
+							value="3"
+							name="product-quantity"
+							class="product-quantity"
+							id="product-quantity"
+						/>
+						<div class="shopping-cart-product-information">
+							<p>Autumn limited edition</p>
+							<p>
+								<span title="Product price" class="product-price">$125.00</span>
+								x <span title="Product quantity">3</span>
+								<span title="Product total price">$375.00</span>
+							</p>
+						</div>
+
+						<input id="cart-remove-product" type="button" value="T" />
+					</div>
+				</fieldset>
+
+				<input id="checkout-button" type="submit" value="Checkout" />
+			</form>
 		</header>
 
 		<main>
@@ -54,45 +108,76 @@
 			</div>
 
 			<article>
-				<!-- Reverse order  -->
-				<h2>Fall Limited Edition</h2>
-				<p>Sneaker Company</p>
+				<!-- In this order for better SEO, reversed with CSS -->
+				<h2 id="product-name">Fall limited edition sneakers</h2>
+				<p id="product-brand">Sneaker Company</p>
 
-				<p>
-					Sneakers These low-profile sneakers are your perfect casual wear
-					companion. Featuring a durable rubber outer sole, they’ll withstand
-					everything the weather can offer.
+				<p id="product-description">
+					These low-profile sneakers are your perfect casual wear companion.
+					Featuring a durable rubber outer sole, they’ll withstand everything
+					the weather can offer.
 				</p>
 
-				<p>
-					<!-- display as column -->
-				</p>
+				<div id="pricing-information">
+					<p>
+						<span class="price" title="Product price">$125.00</span>
+						<span class="discount" title="Product discount">50%</span>
+					</p>
 
-				<div>
-					<span class="price">$125.00</span> <span class="discount">50%</span>
+					<p>
+						<span class="old-price" title="Product price before discount"
+							>$250</span
+						>
+					</p>
 				</div>
-
-				<p><span class="old-price">$250</span></p>
 
 				<form>
 					<input
-						type="number"
-						name="productQuantity"
-						min="0"
-						value="0"
-						step="1"
+						type="hidden"
+						name="product-displayed-name"
+						id="product-displayed-name"
+						value="Fall limited edition sneakers"
 					/>
+					<input
+						type="hidden"
+						name="product-displayed-price"
+						id="product-displayed-price"
+						value="125"
+					/>
+					<input
+						type="hidden"
+						name="product-displayed-discount"
+						id="product-displayed-discount"
+						value="50"
+					/>
+					<input
+						type="hidden"
+						name="product-displayed-original-price"
+						id="product-displayed-original-price"
+						value="250"
+					/>
+
+					<input type="hidden" name="productQuantity" value="0" />
+
+					<div class="product-quantity-control">
+						<button aria-label="Increase product quantity by one">-</button>
+						<p title="Selected product quantity">3</p>
+						<button aria-label="Decrease product quantity by one">+</button>
+					</div>
+
 					<button type="submit">Add to cart</button>
 				</form>
 			</article>
 		</main>
 
-		<div class="attribution">
-			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-				>Frontend Mentor</a
-			>. Coded by <a href="#">Angélique D. Faye</a>.
-		</div>
+		<footer>
+			<div class="attribution">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by <a href="#">Angélique D. Faye</a>.
+			</div>
+		</footer>
 
 		<script src="./src/js/app.js"></script>
 	</body>
