@@ -1,3 +1,5 @@
+import Carousel from "./Carousel.js";
+
 /**
  * Adds a click event on the toggler to toggle the .hide class on the element to hide.
  * Iterates through toggler and toggledElements in case they reference several elements.
@@ -19,4 +21,6 @@ const toggleHide = (togglerElementSelector, elementToHideSelector) => {
 window.addEventListener("DOMContentLoaded", () => {
 	toggleHide(".menu-toggle", ".header-menu");
 	toggleHide("#shopping-cart-icon", "#shopping-cart");
+
+	const carousel = new Carousel();
 });
