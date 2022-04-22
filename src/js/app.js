@@ -20,7 +20,7 @@ const toggleHide = (togglerElementSelector, elementToHideSelector) => {
 
 window.addEventListener("DOMContentLoaded", () => {
 	toggleHide(".menu-toggle", ".header-menu");
-	toggleHide("#shopping-cart-icon", "#shopping-cart");
+	toggleHide("#shopping-cart-toggle", "#shopping-cart");
 
 	const carousel = new Carousel();
 });

@@ -139,12 +139,12 @@ header nav {
 
 /* SHOPPING CART */
 
-#shopping-cart-icon {
-	background-image: url("./images/icon-cart.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 2rem;
-	width: 2rem;
+#shopping-cart-toggle {
+	/* background-image: url("./images/icon-cart.svg"); */
+	/* background-repeat: no-repeat;
+	background-position: center; */
+	height: 1.3rem;
+	width: 1.3rem;
 	margin-left: auto;
 	margin-right: 1rem;
 }
