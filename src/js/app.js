@@ -2,7 +2,7 @@ import Carousel from "./Carousel.js";
 
 /**
  * Adds a click event on the toggler to toggle the .hide class on the element to hide.
- * Iterates through toggler and toggledElements in case they reference several elements.
+ * Iterates through toggler and toggledElements in case they reference an array of elements.
  * @param {string} togglerElementSelector
  * @param {string} elementToHideSelector
  */
