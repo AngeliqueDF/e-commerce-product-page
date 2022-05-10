@@ -615,6 +615,11 @@ footer {
 	.image-thumbnails > img {
 		width: 7rem;
 		height: 7rem;
+		border: 3px solid transparent;
+	}
+
+	img.selected-thumbnail {
+		border: 3px solid var(--orange);
 	}
 
 	.image-thumbnails > img:hover {
