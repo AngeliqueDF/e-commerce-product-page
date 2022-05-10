@@ -605,6 +605,53 @@ footer {
 		margin-bottom: 2rem;
 	}
 
+	.lightbox-open::after {
+		display: block;
+		content: "";
+		background-color: black;
+		opacity: 70%;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	/* .lightbox {
+		position: absolute;
+		top: 10%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 50%;
+		height: 60%;
+		margin: 0 auto;
+		z-index: 3; */
+
+	/* padding: 2% 10%; */
+
+	/* display: grid;
+
+		grid-column-start: 1;
+		grid-row-start: 1;
+		margin: 0 auto;
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.lightbox button {
+		display: block;
+	}
+
+	.lightbox .previous-image {
+		left: -3%;
+	}
+	.lightbox .next-image {
+		right: -3%;
+	} */
+
 	.image-thumbnails {
 		grid-row-start: 2;
 		display: flex;
