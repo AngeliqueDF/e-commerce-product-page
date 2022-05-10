@@ -320,8 +320,8 @@ header nav {
 	display: none;
 }
 
-#previous-image,
-#next-image {
+.previous-image,
+.next-image {
 	position: absolute;
 	background-color: white;
 	top: 50%;
@@ -332,11 +332,11 @@ header nav {
 	background-position: center;
 }
 
-#previous-image {
+.previous-image {
 	left: 5%;
 	background-image: url("./images/icon-previous.svg");
 }
-#next-image {
+.next-image {
 	right: 5%;
 	background-image: url("./images/icon-next.svg");
 }
