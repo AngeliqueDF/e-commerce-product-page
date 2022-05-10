@@ -1,13 +1,14 @@
 {
-  "name": "e-commerce-lp",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^2.9.7"
-  }
+	"name": "ecommerce-product-page-challenge",
+	"private": true,
+	"version": "1.0.0",
+	"description": "![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"vite": "^2.9.7"
+	}
 }
