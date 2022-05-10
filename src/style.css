@@ -194,6 +194,7 @@ header nav {
 	top: -0.4rem;
 	right: -0.5rem;
 	border-radius: 12px;
+	display: none;
 }
 
 #shopping-cart-toggle img {
@@ -264,8 +265,7 @@ header nav {
 #checkout-button {
 	background-color: var(--orange);
 	padding: 1rem;
-	padding: 1.5rem;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	border-radius: 0.8rem;
 }
 
