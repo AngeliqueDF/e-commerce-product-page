@@ -1,22 +1,6 @@
-import Carousel from "./Carousel.js";
-
-/**
- * Adds a click event on the toggler to toggle the .hide class on the element to hide.
- * Iterates through toggler and toggledElements in case they reference an array of elements.
- * @param {string} togglerElementSelector
- * @param {string} elementToHideSelector
- */
-const toggleHide = (togglerElementSelector, elementToHideSelector) => {
-	const toggler = document.querySelectorAll(togglerElementSelector);
-	const toggledElements = document.querySelectorAll(elementToHideSelector);
-	toggler.forEach((element) => {
-		element.addEventListener("click", () => {
-			toggledElements.forEach((toggledElement) => {
-				toggledElement.classList.toggle("hide");
-			});
-		});
-	});
-};
+import DesktopCarousel from "./DesktopCarousel.js";
+import MobileCarousel from "./MobileCarousel.js";
+import { toggleHide } from "./helpers.js";
 
 const LARGE_IMAGE_SELECTOR = ".large-product-image";
 const THUMBNAILS_ROW_SELECTOR = ".image-thumbnails img";
