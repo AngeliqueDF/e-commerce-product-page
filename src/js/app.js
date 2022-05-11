@@ -1,5 +1,6 @@
 import DesktopCarousel from "./DesktopCarousel.js";
 import MobileCarousel from "./MobileCarousel.js";
+import ShoppingCart from "./ShoppingCart.js";
 import { toggleHide } from "./helpers.js";
 
 const LARGE_IMAGE_SELECTOR = ".large-product-image";
@@ -18,6 +19,14 @@ const LARGE_IMAGES_PATHS = [
 window.addEventListener("DOMContentLoaded", () => {
 	toggleHide(".menu-toggle", ".header-menu");
 	toggleHide("#shopping-cart-toggle", "#shopping-cart");
+
+	// Shopping cart
+	const shoppingCart = new ShoppingCart(
+		".product-quantity-control p",
+		".product-quantity-control .increment",
+		".product-quantity-control .decrement",
+		".add-to-card"
+	);
 
 	if (window.innerWidth <= 375) {
 		const mobileCarousel = new MobileCarousel(
