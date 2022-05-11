@@ -193,14 +193,15 @@ header {
 	content: "";
 	background-color: var(--orange);
 	color: white;
-	padding: 0.4rem;
+	padding: 0.2rem 0.4rem;
 	position: absolute;
 	z-index: 3;
-	top: -0.3rem;
-	right: 1rem;
-	border-radius: 100%;
+	top: 0.2rem;
+	right: -1.8rem;
+	border-radius: 0.6rem;
 	min-width: 1rem;
 	text-align: center;
+	font-size: 0.9rem;
 }
 
 #shopping-cart-toggle img {
@@ -541,6 +542,10 @@ footer {
 	}
 
 	#shopping-cart-toggle {
+		margin-right: 3rem;
+	}
+
+	.tooltip {
 		margin-right: 3rem;
 	}
 
