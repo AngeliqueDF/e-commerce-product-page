@@ -41,14 +41,15 @@ window.addEventListener("DOMContentLoaded", () => {
 				desktopCarousel.renderLightBox();
 				desktopCarousel.renderLightboxOverlay();
 
-				const lightboxElement = document.querySelector(".lightbox");
-				const lightboxOverlay = document.querySelector(".lightbox-overlay");
-
 				// TODO either create a Lightbox class or move this functionality to DesktopCarousel
+				const lightboxOverlay = document.querySelector(".lightbox-overlay");
+				const lightboxCloseButton = document.querySelector(".close-lightbox");
 				// When the overlay is clicked, we remove it as well as the the lightbox
 				lightboxOverlay.addEventListener("click", () => {
-					lightboxElement.remove();
-					lightboxOverlay.remove();
+					desktopCarousel.closeLightbox();
+				});
+				lightboxCloseButton.addEventListener("click", () => {
+					desktopCarousel.closeLightbox();
 				});
 
 				const lightbox = new DesktopCarousel(

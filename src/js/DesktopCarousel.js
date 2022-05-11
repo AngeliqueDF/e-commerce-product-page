@@ -1,5 +1,6 @@
 class DesktopCarousel {
 	LIGHTBOX_TEMPLATE = `
+	   <button class="close-lightbox">close</button>
 	   <button class="product-image-controller previous-image"></button>
 	   <button class="product-image-controller next-image"></button>
 	
@@ -124,6 +125,13 @@ class DesktopCarousel {
 		div.innerHTML = this.LIGHTBOX_TEMPLATE;
 		div.classList.add("lightbox");
 		document.body.appendChild(div);
+	}
+
+	closeLightbox() {
+		const lightboxElement = document.querySelector(".lightbox");
+		const lightboxOverlay = document.querySelector(".lightbox-overlay");
+		lightboxElement.remove();
+		lightboxOverlay.remove();
 	}
 }
 
