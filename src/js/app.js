@@ -1,22 +1,7 @@
-import Carousel from "./Carousel.js";
-
-/**
- * Adds a click event on the toggler to toggle the .hide class on the element to hide.
- * Iterates through toggler and toggledElements in case they reference an array of elements.
- * @param {string} togglerElementSelector
- * @param {string} elementToHideSelector
- */
-const toggleHide = (togglerElementSelector, elementToHideSelector) => {
-	const toggler = document.querySelectorAll(togglerElementSelector);
-	const toggledElements = document.querySelectorAll(elementToHideSelector);
-	toggler.forEach((element) => {
-		element.addEventListener("click", () => {
-			toggledElements.forEach((toggledElement) => {
-				toggledElement.classList.toggle("hide");
-			});
-		});
-	});
-};
+import DesktopCarousel from "./DesktopCarousel.js";
+import MobileCarousel from "./MobileCarousel.js";
+import ShoppingCart from "./ShoppingCart.js";
+import { toggleHide } from "./helpers.js";
 
 const LARGE_IMAGE_SELECTOR = ".large-product-image";
 const THUMBNAILS_ROW_SELECTOR = ".image-thumbnails img";
@@ -35,13 +20,56 @@ window.addEventListener("DOMContentLoaded", () => {
 	toggleHide(".menu-toggle", ".header-menu");
 	toggleHide("#shopping-cart-toggle", "#shopping-cart");
 
-	const carousel = new Carousel(
-		LARGE_IMAGE_SELECTOR,
-		THUMBNAILS_ROW_SELECTOR,
-		PREVIOUS_BUTTON_SELECTOR,
-		NEXT_BUTTON_SELECTOR,
-		LARGE_IMAGES_PATHS
+	// Shopping cart
+	const shoppingCart = new ShoppingCart(
+		".product-quantity-control p",
+		".product-quantity-control .increment",
+		".product-quantity-control .decrement",
+		".add-to-card"
 	);
 
-	const largeImage = document.querySelector(LARGE_IMAGE_SELECTOR);
+	if (window.innerWidth <= 375) {
+		const mobileCarousel = new MobileCarousel(
+			LARGE_IMAGE_SELECTOR,
+			PREVIOUS_BUTTON_SELECTOR,
+			NEXT_BUTTON_SELECTOR,
+			LARGE_IMAGES_PATHS
+		);
+	} else {
+		const desktopCarousel = new DesktopCarousel(
+			LARGE_IMAGE_SELECTOR,
+			THUMBNAILS_ROW_SELECTOR,
+			PREVIOUS_BUTTON_SELECTOR,
+			NEXT_BUTTON_SELECTOR,
+			LARGE_IMAGES_PATHS
+		);
+
+		document
+			.querySelector(LARGE_IMAGE_SELECTOR)
+			.addEventListener("click", () => {
+				desktopCarousel.renderLightBox();
+				desktopCarousel.renderLightboxOverlay();
+
+				// TODO either create a Lightbox class or move this functionality to DesktopCarousel
+				const lightboxOverlay = document.querySelector(".lightbox-overlay");
+				const lightboxCloseButton = document.querySelector(".close-lightbox");
+				// When the overlay is clicked, we remove it as well as the the lightbox
+				lightboxOverlay.addEventListener("click", () => {
+					desktopCarousel.closeLightbox();
+				});
+				lightboxCloseButton.addEventListener("click", () => {
+					desktopCarousel.closeLightbox();
+				});
+
+				const lightbox = new DesktopCarousel(
+					".lightbox " + LARGE_IMAGE_SELECTOR,
+					".lightbox " + THUMBNAILS_ROW_SELECTOR,
+					".lightbox " + PREVIOUS_BUTTON_SELECTOR,
+					".lightbox " + NEXT_BUTTON_SELECTOR,
+					LARGE_IMAGES_PATHS
+				);
+
+				lightbox.initializeButtons();
+			});
+	}
 });

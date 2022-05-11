@@ -43,68 +43,25 @@
 				</ul>
 			</nav>
 
-			<button
-				id="shopping-cart-toggle"
-				aria-label="Display shopping cart"
-				value="shopping-cart"
-			>
-				<img src="./src/images/icon-toggle-cart.svg" alt="" />
-			</button>
+			<div class="shopping-cart-toggle-container">
+				<button
+					id="shopping-cart-toggle"
+					aria-label="Display shopping cart"
+					value="shopping-cart"
+				>
+					<img src="./src/images/icon-toggle-cart.svg" alt="" />
+				</button>
+			</div>
 
 			<img src="./src/images/image-avatar.png" alt="" id="avatar" />
 
 			<form id="shopping-cart" class="hide">
 				<fieldset>
 					<legend>Cart</legend>
-
-					<!-- 
-						<div class="empty-cart-message">
-							<p>Your cart is empty.</p>
-						</div>
-
-					 -->
-
-					<div class="shopping-cart-product-row">
-						<img src="./src/images/image-product-1-thumbnail.jpg" alt="" />
-
-						<input
-							type="hidden"
-							value="Autumn limited edition"
-							name="product-cart-name"
-							class="product-cart-name"
-							id="product-cart-name"
-						/>
-
-						<input
-							type="hidden"
-							value="125.00"
-							name="product-price"
-							id="product-price"
-						/>
-
-						<input
-							type="hidden"
-							value="3"
-							name="product-quantity"
-							class="product-quantity"
-							id="product-quantity"
-						/>
-						<div class="shopping-cart-product-information">
-							<p>Autumn limited edition</p>
-							<p>
-								<span title="Product price" class="product-price">$125.00</span>
-								x <span title="Product quantity">3</span>
-								<span title="Product total price" id="product-total"
-									>$375.00</span
-								>
-							</p>
-						</div>
-
-						<input id="cart-remove-product" type="button" />
+					<div class="empty-cart-message">
+						<p>Your cart is empty.</p>
 					</div>
 				</fieldset>
-
-				<input id="checkout-button" type="submit" value="Checkout" />
 			</form>
 		</header>
 
@@ -140,7 +97,9 @@
 
 				<div id="pricing-information">
 					<p>
-						<span class="price" title="Product price">$125.00</span>
+						<span class="price" title="Product price"
+							>$<span id="displayed-product-price">125</span>.00</span
+						>
 						<span class="discount" title="Product discount">50%</span>
 					</p>
 
@@ -180,9 +139,19 @@
 					<input type="hidden" name="productQuantity" value="0" />
 
 					<div class="product-quantity-control">
-						<button aria-label="Increase product quantity by one">-</button>
-						<p title="Selected product quantity">3</p>
-						<button aria-label="Decrease product quantity by one">+</button>
+						<button
+							class="decrement"
+							aria-label="Increase product quantity by one"
+						>
+							-
+						</button>
+						<p title="Selected product quantity">0</p>
+						<button
+							class="increment"
+							aria-label="Decrease product quantity by one"
+						>
+							+
+						</button>
 					</div>
 
 					<button class="add-to-card" type="submit">
