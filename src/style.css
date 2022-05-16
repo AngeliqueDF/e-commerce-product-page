@@ -618,6 +618,17 @@ footer {
 		height: 7rem;
 	}
 
+	img.selected-thumbnail {
+		border: 3px solid var(--orange);
+	}
+
+	.image-thumbnails > img:hover {
+		opacity: 70%;
+	}
+
+	.image-thumbnails > img:active {
+		opacity: unset;
+	}
 
 	.product-images,
 	.lightbox {
@@ -719,17 +730,9 @@ footer {
 		border: 3px solid transparent;
 	}
 
-	img.selected-thumbnail {
-		border: 3px solid var(--orange);
 	}
 
-	.image-thumbnails > img:hover {
-		opacity: 70%;
-		cursor: pointer;
 	}
-
-	.image-thumbnails > img:active {
-		opacity: unset;
 	}
 
 	main > article {
