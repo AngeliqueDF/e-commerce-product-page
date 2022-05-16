@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 				const lightbox = new DesktopCarousel(
 					".lightbox " + LARGE_IMAGE_SELECTOR,
-					".lightbox " + THUMBNAILS_ROW_SELECTOR,
+					".lightbox " + ".thumbnail-container",
 					".lightbox " + PREVIOUS_BUTTON_SELECTOR,
 					".lightbox " + NEXT_BUTTON_SELECTOR,
 					LARGE_IMAGES_PATHS
