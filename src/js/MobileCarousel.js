@@ -1,54 +1,27 @@
-class Carousel {
+class MobileCarousel {
 	constructor(
 		largeImageSelector,
-		thumbnailsRowSelector,
 		previousImageButtonSelector,
 		nextImageButtonSelector,
 		largeImagesPaths
 	) {
-		console.log(arguments);
-		this.largeImageElement = document.querySelector(largeImageSelector);
+		console.log(this);
 
-		/**
-		 * Casting Nodelist type to Array to be able to use array methods
-		 */
-		this.thumbnailElements = Array.from(
-			document.querySelectorAll(thumbnailsRowSelector)
-		);
+		this.largeImageElement = document.querySelector(largeImageSelector);
 
 		this.previousImageButton = document.querySelector(
 			previousImageButtonSelector
 		);
-		this.nextImageButtonSelector = nextImageButtonSelector;
+		this.nextImageButton = document.querySelector(nextImageButtonSelector);
+		this.largeImagesPaths = largeImagesPaths;
 
-		this.initializeButtons();
-
-		// On desktop, thumbnails clicking a thumbnail updates the large image
-		this.thumbnailElements.forEach((thumbnail, index) => {
-			thumbnail.addEventListener("click", (e) => {
-				this.updateSelectedThumbnail(e.target, index);
-			});
+		this.previousImageButton.addEventListener("click", () => {
+			this.displayPreviousImage();
 		});
 
-		this.largeImagesPaths = largeImagesPaths;
-		this.currentLargeImgPath = new URL(this.largeImageElement.src).pathname;
-	}
-
-	initializeButtons() {
-		console.log(window.innerWidth);
-
-		if (window.innerWidth <= 375) {
-			this.previousImageButton.addEventListener("click", (e) => {
-				this.displayPreviousImage(e);
-			});
-
-			this.nextImageButton = document.querySelector(
-				this.nextImageButtonSelector
-			);
-			this.nextImageButton.addEventListener("click", (e) => {
-				this.displayNextImage(e);
-			});
-		}
+		this.nextImageButton.addEventListener("click", (e) => {
+			this.displayNextImage();
+		});
 	}
 
 	updateSelectedThumbnail(element, index) {
@@ -68,14 +41,16 @@ class Carousel {
 	 */
 	replaceLargeImagePath = (newPath) => {
 		this.largeImageElement.src = newPath;
-		this.currentLargeImgPath = newPath;
-		console.log(this.currentLargeImgPath);
+	};
+
+	currentLargeImgPath = function () {
+		return new URL(this.largeImageElement.src).pathname;
 	};
 
 	displayPreviousImage() {
 		// Find the index of the current path in currentLargeImgPath. To determine if we need to move to the last image.
 		const indexOfImage = this.largeImagesPaths.findIndex(
-			(image) => image === this.currentLargeImgPath
+			(image) => image === this.currentLargeImgPath()
 		);
 
 		// If the first image in the list is displayed, we replace it with the last image.
@@ -91,12 +66,14 @@ class Carousel {
 
 	displayNextImage() {
 		const indexOfImage = this.largeImagesPaths.findIndex(
-			(image) => image === this.currentLargeImgPath
+			(image) => image === this.currentLargeImgPath()
 		);
+
+		console.trace(this.currentLargeImgPath());
 
 		// If the last image is currently displayed, we replace it by the first one.
 		if (indexOfImage === this.largeImagesPaths.length - 1) {
-			this.replaceLargeImagePath(`/src/images/image-product-1.jpg`);
+			this.replaceLargeImagePath(`${this.largeImagesPaths[0]}`);
 		} else {
 			const newIndex = indexOfImage + 1;
 			this.replaceLargeImagePath(`${this.largeImagesPaths[newIndex]}`);
@@ -104,4 +81,4 @@ class Carousel {
 	}
 }
 
-export default Carousel;
+export default MobileCarousel;
