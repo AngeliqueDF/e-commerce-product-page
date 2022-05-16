@@ -802,6 +802,9 @@ footer {
 		width: 60%;
 		height: 100%;
 	}
+	button.add-to-cart:hover {
+		opacity: 70%;
+	}
 
 	footer {
 		position: absolute;
