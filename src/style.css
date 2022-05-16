@@ -180,10 +180,6 @@ header nav {
 	position: relative;
 }
 
-#shopping-cart-toggle:hover {
-	cursor: pointer;
-}
-
 header {
 	position: relative;
 }
@@ -480,6 +476,15 @@ footer {
 }
 
 @media screen and (min-width: 1440px) {
+	#shopping-cart-toggle:hover,
+	.close-lightbox:hover,
+	.image-thumbnails > img:hover,
+	.product-image-controller,
+	.thumbnail-container,
+	button.add-to-cart:hover,
+	#avatar:hover {
+		cursor: pointer;
+	}
 	header {
 		width: 80%;
 		padding: 1rem 1rem 0.6rem;
@@ -549,7 +554,6 @@ footer {
 
 	#avatar:hover {
 		border: 2px solid var(--orange);
-		cursor: pointer;
 	}
 
 	#shopping-cart {
