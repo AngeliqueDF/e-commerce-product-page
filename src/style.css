@@ -707,6 +707,12 @@ footer {
 		margin: 0 auto;
 	}
 
+	.lightbox .thumbnail-container,
+	.lightbox .thumbnail-container img,
+	.lightbox .thumbnail-container.selected-thumbnail,
+	.lightbox .thumbnail-container.selected-thumbnail::after {
+		border-radius: 12px;
+	}
 	.lightbox .thumbnail-container {
 		width: 6rem;
 		height: 6rem;
