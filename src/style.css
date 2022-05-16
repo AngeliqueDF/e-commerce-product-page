@@ -322,6 +322,10 @@ header {
 	display: none;
 }
 
+.image-thumbnails img {
+	border: 3px solid transparent;
+}
+
 .previous-image,
 .next-image {
 	position: absolute;
