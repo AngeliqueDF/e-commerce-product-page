@@ -649,15 +649,6 @@ footer {
 		height: 60%;
 		margin: 0 auto;
 		z-index: 3;
-
-		/* padding: 2% 10%; */
-
-		/* display: grid;
-
-		grid-column-start: 1;
-		grid-row-start: 1;
-		margin: 0 auto;*/
-		/* grid-template-rows: repeat(2, 1fr); */
 	}
 
 	.lightbox button {
