@@ -738,6 +738,15 @@ footer {
 		border-color: var(--orange);
 		position: relative;
 	}
+	.lightbox .thumbnail-container.selected-thumbnail::after {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		position: absolute;
+		top: 0;
+		opacity: 80%;
 	}
 
 	main > article {
