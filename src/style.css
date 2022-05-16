@@ -606,6 +606,13 @@ footer {
 	.product-image-controller {
 		display: none;
 	}
+	.image-thumbnails {
+		grid-row-start: 2;
+		display: flex;
+		justify-content: space-between;
+		height: fit-content;
+	}
+
 
 	.product-images,
 	.lightbox {
@@ -690,11 +697,9 @@ footer {
 		background-image: url("./images/icon-next-orange.svg");
 	}
 
-	.image-thumbnails {
-		grid-row-start: 2;
-		display: flex;
-		justify-content: space-between;
-		height: fit-content;
+	.lightbox .image-thumbnails {
+		width: 85%;
+		margin: 0 auto;
 	}
 
 	.image-thumbnails > img {
