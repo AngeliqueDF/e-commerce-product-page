@@ -80,8 +80,8 @@ img {
 	background-position: center;
 	height: 2rem;
 	width: 2rem;
-	margin-left: auto;
-	margin-right: 1rem;
+	margin-inline-start: auto;
+	margin-inline-end: 1rem;
 }
 
 #checkout-button,
@@ -103,13 +103,13 @@ header {
 }
 
 #open-mobile-menu {
-	margin-right: 1rem;
+	margin-inline-end: 1rem;
 	background-image: url("./images/icon-menu.svg");
 	margin: 0 1rem 0 0;
 }
 
 header h1 {
-	margin-right: 3rem;
+	margin-inline-end: 3rem;
 }
 
 #avatar {
@@ -119,7 +119,7 @@ header h1 {
 }
 
 header nav {
-	margin-right: auto;
+	margin-inline-end: auto;
 }
 
 .header-menu {
@@ -140,7 +140,7 @@ header nav {
 }
 
 .header-menu li {
-	margin-bottom: 2rem;
+	margin-block-end: 2rem;
 }
 
 .header-menu::after {
@@ -156,7 +156,7 @@ header nav {
 }
 
 #close-mobile-menu {
-	margin-bottom: 2.5rem;
+	margin-block-end: 2.5rem;
 	background-image: url("./images/icon-close.svg");
 	background-position: left center;
 }
@@ -169,8 +169,8 @@ header nav {
 /* SHOPPING CART */
 
 .shopping-cart-toggle-container {
-	margin-right: 2rem;
-	margin-left: auto;
+	margin-inline-end: 2rem;
+	margin-inline-start: auto;
 	position: relative;
 }
 
@@ -205,7 +205,7 @@ header {
 }
 
 #shopping-cart-toggle img {
-	margin-top: 2px;
+	margin-block-start: 2px;
 	padding: 1rem;
 }
 
@@ -226,10 +226,8 @@ header {
 
 #shopping-cart legend {
 	padding: 1.5rem 0;
-	margin-left: 1.5rem;
-	/* padding-right: -10rem; */
-	/* border-bottom: 1px solid grey;*/
-	margin-bottom: 1.5rem;
+	margin-inline-start: 1.5rem;
+	margin-block-end: 1.5rem;
 	width: 40%;
 	color: var(--very-dark-blue);
 	font-weight: 700;
@@ -251,7 +249,7 @@ header {
 	width: 100%;
 	height: 100%;
 	justify-content: center;
-	margin-top: 25%;
+	margin-block-start: 25%;
 	align-items: center;
 	color: var(--dark-grayish-blue);
 }
@@ -300,8 +298,8 @@ header {
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 0.5rem 0;
-	margin-right: auto;
-	margin-left: 1rem;
+	margin-inline-end: auto;
+	margin-inline-start: 1rem;
 }
 
 #cart-remove-product {
@@ -379,7 +377,7 @@ article {
 }
 
 .price {
-	margin-right: 0.5rem;
+	margin-inline-end: 0.5rem;
 }
 
 .discount {
@@ -398,15 +396,15 @@ article {
 #product-name,
 #product-brand,
 #pricing-information {
-	margin-bottom: 1rem;
+	margin-block-end: 1rem;
 }
 
 #product-description {
-	margin-bottom: 1.5rem;
+	margin-block-end: 1.5rem;
 }
 
 .product-quantity-control {
-	margin-bottom: 0.6rem;
+	margin-block-end: 0.6rem;
 }
 
 #product-name {
@@ -474,22 +472,22 @@ article form {
 .add-to-card img {
 	height: 1rem;
 	width: 1rem;
-	margin-right: 0.5rem;
+	margin-inline-end: 0.5rem;
 }
 
 footer {
-	margin-top: 4rem;
+	margin-block-start: 4rem;
 }
 
 @media screen and (min-width: 1440px) {
 	header {
 		width: 80%;
 		padding: 1rem 1rem 0.6rem;
-		border-bottom: 1px solid var(--grayish-blue);
+		border-block-end: 1px solid var(--grayish-blue);
 	}
 
 	header h1 {
-		margin-right: 2rem;
+		margin-inline-end: 2rem;
 	}
 
 	#open-mobile-menu {
@@ -527,11 +525,11 @@ footer {
 	.header-links li {
 		margin: 0rem 2rem 0rem 0rem;
 		padding: 2rem 0 calc(2rem - 4px);
-		border-bottom: 4px solid transparent;
+		border-block-end: 4px solid transparent;
 	}
 
 	.header-links li:hover {
-		border-bottom: 4px solid var(--orange);
+		border-block-end: 4px solid var(--orange);
 	}
 	.header-links li:hover a {
 		color: var(--dark-grayish-blue);
@@ -542,11 +540,11 @@ footer {
 	}
 
 	#shopping-cart-toggle {
-		margin-right: 3rem;
+		margin-inline-end: 3rem;
 	}
 
 	.tooltip {
-		margin-right: 3rem;
+		margin-inline-end: 3rem;
 	}
 
 	#avatar:hover {
@@ -569,7 +567,7 @@ footer {
 	}
 
 	#shopping-cart legend {
-		margin-left: unset;
+		margin-inline-start: unset;
 	}
 
 	fieldset {
@@ -582,7 +580,7 @@ footer {
 	}
 
 	.shopping-cart-product-row {
-		margin-bottom: 2rem;
+		margin-block-end: 2rem;
 	}
 
 	#checkout-button {
@@ -609,19 +607,14 @@ footer {
 		margin: 0 auto;
 
 		display: grid;
-		/* grid-template-rows: 45vh 12vh; */
 		grid-template-rows: repeat(2, 1fr);
-		grid-row-gap: 4rem;
+		grid-row-gap: 2rem;
 	}
 
 	.lightbox img,
 	.product-images img {
 		border-radius: 12px;
 	}
-
-	/* .large-product-image {
-		margin-bottom: 2rem;
-	} */
 
 	.lightbox-overlay {
 		display: block;
@@ -707,9 +700,9 @@ footer {
 	}
 
 	main > article {
-		padding-top: 4rem;
-		padding-right: unset;
-		padding-left: unset;
+		padding-block-start: 4rem;
+		padding-inline-end: unset;
+		padding-inline-start: unset;
 		width: 92%;
 	}
 
