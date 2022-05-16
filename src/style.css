@@ -734,6 +734,9 @@ footer {
 		border: unset;
 	}
 
+	.lightbox .thumbnail-container.selected-thumbnail {
+		border-color: var(--orange);
+		position: relative;
 	}
 	}
 
