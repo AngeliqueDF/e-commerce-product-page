@@ -1,6 +1,6 @@
 class DesktopCarousel {
 	LIGHTBOX_TEMPLATE = `
-	   <button class="close-lightbox">close</button>
+	   <button class="close-lightbox" title="Close lightbox"></button>
 	   <button class="product-image-controller previous-image"></button>
 	   <button class="product-image-controller next-image"></button>
 	
@@ -11,10 +11,21 @@ class DesktopCarousel {
 	   />
 	
 	   <div class="image-thumbnails">
+		 	<div class="thumbnail-container">
 	     <img src="./src/images/image-product-1-thumbnail.jpg" alt="" />
+			</div>	
+
+			<div class="thumbnail-container">	
 	     <img src="./src/images/image-product-2-thumbnail.jpg" alt="" />
+			</div>
+
+			<div class="thumbnail-container">
 	     <img src="./src/images/image-product-3-thumbnail.jpg" alt="" />
+			</div>
+
+			<div class="thumbnail-container">
 	     <img src="./src/images/image-product-4-thumbnail.jpg" alt="" />
+			</div>
 	   </div>
 	 `;
 	constructor(
