@@ -53,8 +53,7 @@ class DesktopCarousel {
 		// On desktop, thumbnails clicking a thumbnail updates the large image
 		this.thumbnailElements.forEach((thumbnail, index) => {
 			thumbnail.addEventListener("click", (e) => {
-				this.updateSelect;
-				this.updateSelectedThumbnail(e.target, index);
+				this.updateSelectedThumbnail(thumbnail, index);
 			});
 		});
 
