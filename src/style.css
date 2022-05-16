@@ -730,6 +730,8 @@ footer {
 		border: 3px solid transparent;
 	}
 
+	.lightbox .thumbnail-container img {
+		border: unset;
 	}
 
 	}
