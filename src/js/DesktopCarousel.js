@@ -1,31 +1,26 @@
+import largeImageOne from "./../images/image-product-1.jpg";
+
 class DesktopCarousel {
-	LIGHTBOX_TEMPLATE = `
+	LIGHTBOX_TEMPLATE = (thumbnails) => `
 	   <button class="close-lightbox" title="Close lightbox"></button>
 	   <button class="product-image-controller previous-image"></button>
 	   <button class="product-image-controller next-image"></button>
 	
 	   <img
 	     class="large-product-image"
-	     src="./src/images/image-product-1.jpg"
+	     src=${largeImageOne}
 	     alt=""
 	   />
 	
 	   <div class="image-thumbnails">
-		 	<div class="thumbnail-container">
-	     <img src="./src/images/image-product-1-thumbnail.jpg" alt="" />
-			</div>	
-
-			<div class="thumbnail-container">	
-	     <img src="./src/images/image-product-2-thumbnail.jpg" alt="" />
-			</div>
-
-			<div class="thumbnail-container">
-	     <img src="./src/images/image-product-3-thumbnail.jpg" alt="" />
-			</div>
-
-			<div class="thumbnail-container">
-	     <img src="./src/images/image-product-4-thumbnail.jpg" alt="" />
-			</div>
+		 ${thumbnails
+				.map(
+					(thumbnail) =>
+						'<div class="thumbnail-container"><img src="' +
+						thumbnail +
+						'" alt="" /></div>'
+				)
+				.join("")}
 	   </div>
 	 `;
 	constructor(
@@ -130,9 +125,9 @@ class DesktopCarousel {
 		document.body.appendChild(div);
 	}
 
-	renderLightBox() {
+	renderLightBox(thumbnails) {
 		const div = document.createElement("div");
-		div.innerHTML = this.LIGHTBOX_TEMPLATE;
+		div.innerHTML = this.LIGHTBOX_TEMPLATE(thumbnails);
 		div.classList.add("lightbox");
 		document.body.appendChild(div);
 	}

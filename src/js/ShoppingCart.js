@@ -4,17 +4,17 @@ class ShoppingCart {
 		incrementQtyBtn,
 		decrementQtyBtn,
 		addToCartBtn,
-		checkoutCartBtn
+		product_thumbnail
 	) {
 		this.itemQuantityElement = document.querySelector(itemQuantity);
 		this.currentQty = this.itemQuantityElement.textContent;
 		this.currentQty = this.itemQuantityElement.textContent;
+		this.product_thumbnail = product_thumbnail;
 
 		this.incrementQuantity = document.querySelector(incrementQtyBtn);
 		this.decrementQuantity = document.querySelector(decrementQtyBtn);
 
 		this.addToCartBtn = document.querySelector(addToCartBtn);
-		this.checkoutCartBtn = document.querySelector(checkoutCartBtn);
 
 		this.shoppingCart = document.querySelector("#shopping-cart");
 		this.cartToggler = document.querySelector("#shopping-cart-toggle");
@@ -92,7 +92,7 @@ class ShoppingCart {
     <fieldset>
       <legend>Cart</legend>
       <div class="shopping-cart-product-row">
-        <img src="./src/images/image-product-1-thumbnail.jpg" alt="" />
+        <img src=${this.product_thumbnail} alt="" />
 
         <input
           type="hidden"
