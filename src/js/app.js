@@ -7,6 +7,11 @@ import largeImageTwo from "./../images/image-product-2.jpg";
 import largeImageThree from "./../images/image-product-3.jpg";
 import largeImageFour from "./../images/image-product-4.jpg";
 
+import thumbnailImageOne from "./../images/image-product-1-thumbnail.jpg";
+import thumbnailImageTwo from "./../images/image-product-2-thumbnail.jpg";
+import thumbnailImageThree from "./../images/image-product-3-thumbnail.jpg";
+import thumbnailImageFour from "./../images/image-product-4-thumbnail.jpg";
+
 const LARGE_IMAGE_SELECTOR = ".large-product-image";
 const THUMBNAILS_ROW_SELECTOR = ".image-thumbnails img";
 
@@ -18,6 +23,13 @@ const LARGE_IMAGES_PATHS = [
 	largeImageTwo,
 	largeImageThree,
 	largeImageFour,
+];
+
+const THUMBNAIL_IMAGES_PATHS = [
+	thumbnailImageOne,
+	thumbnailImageTwo,
+	thumbnailImageThree,
+	thumbnailImageFour,
 ];
 
 window.addEventListener("DOMContentLoaded", () => {
