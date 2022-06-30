@@ -127,7 +127,7 @@ class DesktopCarousel {
 
 	renderLightBox(thumbnails) {
 		const div = document.createElement("div");
-		div.innerHTML = this.LIGHTBOX_TEMPLATE;
+		div.innerHTML = this.LIGHTBOX_TEMPLATE(thumbnails);
 		div.classList.add("lightbox");
 		document.body.appendChild(div);
 	}
