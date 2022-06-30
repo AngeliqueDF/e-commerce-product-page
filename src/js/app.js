@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		document
 			.querySelector(LARGE_IMAGE_SELECTOR)
 			.addEventListener("click", () => {
-				desktopCarousel.renderLightBox();
+				desktopCarousel.renderLightBox(THUMBNAIL_IMAGES_PATHS);
 				desktopCarousel.renderLightboxOverlay();
 
 				// TODO either create a Lightbox class or move this functionality to DesktopCarousel
