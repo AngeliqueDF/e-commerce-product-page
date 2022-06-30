@@ -4,7 +4,6 @@ class ShoppingCart {
 		incrementQtyBtn,
 		decrementQtyBtn,
 		addToCartBtn,
-		checkoutCartBtn,
 		product_thumbnail
 	) {
 		this.itemQuantityElement = document.querySelector(itemQuantity);
@@ -16,7 +15,6 @@ class ShoppingCart {
 		this.decrementQuantity = document.querySelector(decrementQtyBtn);
 
 		this.addToCartBtn = document.querySelector(addToCartBtn);
-		this.checkoutCartBtn = document.querySelector(checkoutCartBtn);
 
 		this.shoppingCart = document.querySelector("#shopping-cart");
 		this.cartToggler = document.querySelector("#shopping-cart-toggle");
