@@ -1,7 +1,3 @@
-import thumbnailImageOne from "./../images/image-product-1-thumbnail.jpg";
-import thumbnailImageTwo from "./../images/image-product-2-thumbnail.jpg";
-import thumbnailImageThree from "./../images/image-product-3-thumbnail.jpg";
-import thumbnailImageFour from "./../images/image-product-4-thumbnail.jpg";
 import largeImageOne from "./../images/image-product-1.jpg";
 
 class DesktopCarousel {
