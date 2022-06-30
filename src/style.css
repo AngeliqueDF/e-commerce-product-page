@@ -479,6 +479,11 @@ footer {
 	margin-block-start: 4rem;
 }
 
+.lightbox,
+.lightbox-overlay {
+	display: none;
+}
+
 @media screen and (min-width: 1440px) {
 	#shopping-cart-toggle:hover,
 	.close-lightbox:hover,
