@@ -1,3 +1,9 @@
+import thumbnailImageOne from "./../images/image-product-1-thumbnail.jpg";
+import thumbnailImageTwo from "./../images/image-product-2-thumbnail.jpg";
+import thumbnailImageThree from "./../images/image-product-3-thumbnail.jpg";
+import thumbnailImageFour from "./../images/image-product-4-thumbnail.jpg";
+import largeImageOne from "./../images/image-product-1.jpg";
+
 class DesktopCarousel {
 	LIGHTBOX_TEMPLATE = `
 	   <button class="close-lightbox" title="Close lightbox"></button>
@@ -6,25 +12,25 @@ class DesktopCarousel {
 	
 	   <img
 	     class="large-product-image"
-	     src="./src/images/image-product-1.jpg"
+	     src=${largeImageOne}
 	     alt=""
 	   />
 	
 	   <div class="image-thumbnails">
 		 	<div class="thumbnail-container">
-	     <img src="./src/images/image-product-1-thumbnail.jpg" alt="" />
+	     <img src=${thumbnailImageOne} alt="" />
 			</div>	
 
 			<div class="thumbnail-container">	
-	     <img src="./src/images/image-product-2-thumbnail.jpg" alt="" />
+	     <img src=${thumbnailImageTwo} alt="" />
 			</div>
 
 			<div class="thumbnail-container">
-	     <img src="./src/images/image-product-3-thumbnail.jpg" alt="" />
+	     <img src=${thumbnailImageThree} alt="" />
 			</div>
 
 			<div class="thumbnail-container">
-	     <img src="./src/images/image-product-4-thumbnail.jpg" alt="" />
+	     <img src=${thumbnailImageFour} alt="" />
 			</div>
 	   </div>
 	 `;
