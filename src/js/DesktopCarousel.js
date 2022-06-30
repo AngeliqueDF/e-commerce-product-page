@@ -13,21 +13,14 @@ class DesktopCarousel {
 	   />
 	
 	   <div class="image-thumbnails">
-		 	<div class="thumbnail-container">
-	     <img src=${thumbnailImageOne} alt="" />
-			</div>	
-
-			<div class="thumbnail-container">	
-	     <img src=${thumbnailImageTwo} alt="" />
-			</div>
-
-			<div class="thumbnail-container">
-	     <img src=${thumbnailImageThree} alt="" />
-			</div>
-
-			<div class="thumbnail-container">
-	     <img src=${thumbnailImageFour} alt="" />
-			</div>
+		 ${thumbnails
+				.map(
+					(thumbnail) =>
+						'<div class="thumbnail-container"><img src="' +
+						thumbnail +
+						'" alt="" /></div>'
+				)
+				.join("")}
 	   </div>
 	 `;
 	constructor(
