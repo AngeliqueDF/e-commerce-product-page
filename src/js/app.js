@@ -2,6 +2,7 @@ import DesktopCarousel from "./DesktopCarousel.js";
 import MobileCarousel from "./MobileCarousel.js";
 import ShoppingCart from "./ShoppingCart.js";
 import { toggleHide } from "./helpers.js";
+
 import largeImageOne from "./../images/image-product-1.jpg";
 import largeImageTwo from "./../images/image-product-2.jpg";
 import largeImageThree from "./../images/image-product-3.jpg";
@@ -54,7 +55,40 @@ window.addEventListener("DOMContentLoaded", () => {
 		);
 	}
 
+	document
+		.querySelector(LARGE_IMAGE_SELECTOR)
+		.addEventListener("click", (e) => {
+			// Check for the current screen width in case the user clicks the large image after resizing the window
+			if (window.innerWidth < 1440) return;
+			const desktopCarousel = new DesktopCarousel(
+				LARGE_IMAGE_SELECTOR,
+				THUMBNAILS_ROW_SELECTOR,
+				PREVIOUS_BUTTON_SELECTOR,
+				NEXT_BUTTON_SELECTOR,
+				LARGE_IMAGES_PATHS
+			);
+			desktopCarousel.renderLightBox(THUMBNAIL_IMAGES_PATHS);
+			desktopCarousel.renderLightboxOverlay();
 
+			// TODO either create a Lightbox class or move this functionality to DesktopCarousel
+			const lightboxOverlay = document.querySelector(".lightbox-overlay");
+			const lightboxCloseButton = document.querySelector(".close-lightbox");
+			// When the overlay is clicked, we remove it as well as the the lightbox
+			lightboxOverlay.addEventListener("click", () => {
+				desktopCarousel.closeLightbox();
+			});
+			lightboxCloseButton.addEventListener("click", () => {
+				desktopCarousel.closeLightbox();
+			});
 
+			const lightbox = new DesktopCarousel(
+				".lightbox " + LARGE_IMAGE_SELECTOR,
+				".lightbox " + ".thumbnail-container",
+				".lightbox " + PREVIOUS_BUTTON_SELECTOR,
+				".lightbox " + NEXT_BUTTON_SELECTOR,
+				LARGE_IMAGES_PATHS
+			);
 
+			lightbox.initializeButtons();
+		});
 });
