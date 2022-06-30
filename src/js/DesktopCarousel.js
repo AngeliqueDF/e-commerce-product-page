@@ -1,7 +1,7 @@
 import largeImageOne from "./../images/image-product-1.jpg";
 
 class DesktopCarousel {
-	LIGHTBOX_TEMPLATE = `
+	LIGHTBOX_TEMPLATE = (thumbnails) => `
 	   <button class="close-lightbox" title="Close lightbox"></button>
 	   <button class="product-image-controller previous-image"></button>
 	   <button class="product-image-controller next-image"></button>
