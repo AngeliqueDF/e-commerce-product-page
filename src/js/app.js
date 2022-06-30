@@ -41,7 +41,8 @@ window.addEventListener("DOMContentLoaded", () => {
 		".product-quantity-control p",
 		".product-quantity-control .increment",
 		".product-quantity-control .decrement",
-		".add-to-cart"
+		".add-to-cart",
+		THUMBNAIL_IMAGES_PATHS[0]
 	);
 
 	if (window.innerWidth <= 375) {
