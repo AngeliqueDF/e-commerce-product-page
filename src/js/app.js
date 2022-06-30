@@ -2,6 +2,10 @@ import DesktopCarousel from "./DesktopCarousel.js";
 import MobileCarousel from "./MobileCarousel.js";
 import ShoppingCart from "./ShoppingCart.js";
 import { toggleHide } from "./helpers.js";
+import largeImageOne from "./../images/image-product-1.jpg";
+import largeImageTwo from "./../images/image-product-2.jpg";
+import largeImageThree from "./../images/image-product-3.jpg";
+import largeImageFour from "./../images/image-product-4.jpg";
 
 const LARGE_IMAGE_SELECTOR = ".large-product-image";
 const THUMBNAILS_ROW_SELECTOR = ".image-thumbnails img";
@@ -10,10 +14,10 @@ const PREVIOUS_BUTTON_SELECTOR = ".previous-image";
 const NEXT_BUTTON_SELECTOR = ".next-image";
 
 const LARGE_IMAGES_PATHS = [
-	"/src/images/image-product-1.jpg",
-	"/src/images/image-product-2.jpg",
-	"/src/images/image-product-3.jpg",
-	"/src/images/image-product-4.jpg",
+	largeImageOne,
+	largeImageTwo,
+	largeImageThree,
+	largeImageFour,
 ];
 
 window.addEventListener("DOMContentLoaded", () => {
