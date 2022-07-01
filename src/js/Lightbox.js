@@ -70,7 +70,24 @@ class Lightbox extends DesktopCarousel {
 				this.displayNextImage();
 			});
 
+		document
+			.querySelector(this.lightboxOverlaySelector)
+			.addEventListener("click", () => {
+				this.closeLightbox();
+			});
+
+		document
+			.querySelector(this.lightboxCloseButtonSelector)
+			.addEventListener("click", () => {
+				this.closeLightbox();
+			});
 	}
+
+	closeLightbox() {
+		this.lightboxElement.remove();
+		this.lightboxOverlay.remove();
+	}
+
 	#currentLargeImgPath = function () {
 		return new URL(this.largeImageElement.src).pathname;
 	};
