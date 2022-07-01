@@ -788,7 +788,7 @@ footer {
 	}
 
 	.thumbnail-container:hover {
-		opacity: 90%;
+		opacity: 50%;
 	}
 
 	button.add-to-cart:hover {
