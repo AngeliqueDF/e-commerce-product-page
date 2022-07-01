@@ -607,6 +607,7 @@ footer {
 		height: 6rem;
 	}
 	.thumbnail-container img {
+		/* Avoid buggy behavior where the image scales up when the thumbnail is selected */
 		border: 3px solid transparent;
 		border-radius: 12px;
 	}
@@ -787,6 +788,7 @@ footer {
 		border: 2px solid var(--orange);
 	}
 
+	/* Make the desktop thumbnail slightly transparent on hover */
 	.thumbnail-container:hover {
 		opacity: 50%;
 	}
