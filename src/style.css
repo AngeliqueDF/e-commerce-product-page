@@ -487,15 +487,6 @@ footer {
 }
 
 @media screen and (min-width: 1440px) {
-	#shopping-cart-toggle:hover,
-	.close-lightbox:hover,
-	.image-thumbnails > img:hover,
-	.product-image-controller,
-	.thumbnail-container,
-	button.add-to-cart:hover,
-	#avatar:hover {
-		cursor: pointer;
-	}
 	header {
 		width: 80%;
 		padding: 1rem 1rem 0.6rem;
@@ -544,13 +535,6 @@ footer {
 		border-block-end: 4px solid transparent;
 	}
 
-	.header-links li:hover {
-		border-block-end: 4px solid var(--orange);
-	}
-	.header-links li:hover a {
-		color: var(--dark-grayish-blue);
-	}
-
 	.header-menu a {
 		color: var(--grayish-blue);
 	}
@@ -561,10 +545,6 @@ footer {
 
 	.tooltip {
 		margin-inline-end: 3rem;
-	}
-
-	#avatar:hover {
-		border: 2px solid var(--orange);
 	}
 
 	#shopping-cart {
@@ -627,10 +607,6 @@ footer {
 
 	img.selected-thumbnail {
 		border: 3px solid var(--orange);
-	}
-
-	.image-thumbnails > img:hover {
-		opacity: 70%;
 	}
 
 	.image-thumbnails > img:active {
@@ -701,23 +677,12 @@ footer {
 		background-size: 100%;
 	}
 
-	.close-lightbox:hover {
-		background-color: transparent;
-		background-image: url("./images/icon-close-orange.svg");
-	}
-
 	.lightbox .previous-image {
 		left: -3%;
-	}
-	.lightbox .previous-image:hover {
-		background-image: url("./images/icon-previous-orange.svg");
 	}
 
 	.lightbox .next-image {
 		right: -3%;
-	}
-	.lightbox .next-image:hover {
-		background-image: url("./images/icon-next-orange.svg");
 	}
 
 	.lightbox .image-thumbnails {
@@ -808,9 +773,6 @@ footer {
 	.add-to-cart {
 		width: 60%;
 		height: 100%;
-	}
-	button.add-to-cart:hover {
-		opacity: 70%;
 	}
 
 	footer {
