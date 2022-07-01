@@ -71,14 +71,14 @@ class Lightbox extends DesktopCarousel {
 			});
 
 	}
-	currentLargeImgPath = function () {
+	#currentLargeImgPath = function () {
 		return new URL(this.largeImageElement.src).pathname;
 	};
 
 	displayPreviousImage() {
-		// Find the index of the current path in currentLargeImgPath. To determine if we need to move to the last image.
+		// Find the index of the current path in #currentLargeImgPath. To determine if we need to move to the last image.
 		const indexOfImage = this.largeImagesPaths.findIndex(
-			(image) => image === this.currentLargeImgPath()
+			(image) => image === this.#currentLargeImgPath()
 		);
 
 		// If the first image in the list is displayed, we replace it with the last image.
@@ -94,7 +94,7 @@ class Lightbox extends DesktopCarousel {
 
 	displayNextImage() {
 		const indexOfImage = this.largeImagesPaths.findIndex(
-			(image) => image === this.currentLargeImgPath()
+			(image) => image === this.#currentLargeImgPath()
 		);
 
 		// If the last image is currently displayed, we replace it by the first one.
