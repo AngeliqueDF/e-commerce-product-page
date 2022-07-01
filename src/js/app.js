@@ -1,4 +1,5 @@
 import DesktopCarousel from "./DesktopCarousel.js";
+import Lightbox from "./Lightbox";
 import MobileCarousel from "./MobileCarousel.js";
 import ShoppingCart from "./ShoppingCart.js";
 import { toggleHide } from "./helpers.js";
@@ -58,4 +59,21 @@ window.addEventListener("DOMContentLoaded", () => {
 		THUMBNAILS_ROW_SELECTOR,
 		LARGE_IMAGES_PATHS
 	);
+
+	document
+		.querySelector(LARGE_IMAGE_SELECTOR)
+		.addEventListener("click", (e) => {
+			// Check for the current screen width in case the user clicks the large image after resizing the window
+			if (window.innerWidth < 1440) return;
+			const lightbox = new Lightbox(
+				".lightbox " + "img" + LARGE_IMAGE_SELECTOR,
+				".lightbox " + ".image-thumbnails .thumbnail-container",
+				LARGE_IMAGES_PATHS,
+				".lightbox " + PREVIOUS_BUTTON_SELECTOR,
+				".lightbox " + NEXT_BUTTON_SELECTOR,
+				".lightbox-overlay",
+				".close-lightbox",
+				THUMBNAIL_IMAGES_PATHS,
+			);
+		});
 });
