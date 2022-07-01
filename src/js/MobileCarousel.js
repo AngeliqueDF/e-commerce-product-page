@@ -54,7 +54,7 @@ class MobileCarousel {
 		// If the first image in the list is displayed, we replace it with the last image.
 		if (indexOfImage === 0) {
 			this.replaceLargeImagePath(
-				`/src/images/image-product-${this.largeImagesPaths.length}.jpg`
+				`${this.largeImagesPaths[this.largeImagesPaths.length - 1]}`
 			);
 		} else {
 			const newIndex = indexOfImage - 1;
