@@ -782,3 +782,59 @@ footer {
 		right: 0;
 	}
 }
+
+/* HOVER COMPATIBLE DEVICES */
+@media (any-hover: hover) {
+	.header-links li:hover {
+		border-block-end: 4px solid var(--orange);
+	}
+	.header-links li:hover a {
+		color: var(--dark-grayish-blue);
+	}
+
+	#shopping-cart-toggle:hover,
+	.close-lightbox:hover,
+	.image-thumbnails > img:hover,
+	.product-image-controller,
+	.thumbnail-container,
+	button.add-to-cart:hover,
+	#avatar:hover {
+		cursor: pointer;
+	}
+
+	#avatar:hover {
+		border: 2px solid var(--orange);
+	}
+
+	.image-thumbnails > img:hover,
+	.thumbnail-container:hover {
+		opacity: 90%;
+	}
+
+	button.add-to-cart:hover {
+		opacity: 70%;
+	}
+
+	.close-lightbox:hover {
+		background-color: transparent;
+		background-image: url("./images/icon-close-orange.svg");
+	}
+
+	.lightbox .previous-image:hover {
+		background-image: url("./images/icon-previous-orange.svg");
+	}
+
+	.lightbox .next-image:hover {
+		background-image: url("./images/icon-next-orange.svg");
+	}
+
+	.lightbox .previous-image:active {
+		background-image: url("./images/icon-previous.svg");
+	}
+
+	.lightbox .next-image:active {
+		background-image: url("./images/icon-next.svg");
+	}
+}
+/* END HOVER COMPATIBLE DEVICES */
+
