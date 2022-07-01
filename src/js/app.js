@@ -15,7 +15,7 @@ import thumbnailImageThree from "./../images/image-product-3-thumbnail.jpg";
 import thumbnailImageFour from "./../images/image-product-4-thumbnail.jpg";
 
 const LARGE_IMAGE_SELECTOR = ".large-product-image";
-const THUMBNAILS_ROW_SELECTOR = ".image-thumbnails img";
+const THUMBNAILS_ROW_SELECTOR = ".image-thumbnails .thumbnail-container";
 
 const PREVIOUS_BUTTON_SELECTOR = ".previous-image";
 const NEXT_BUTTON_SELECTOR = ".next-image";
