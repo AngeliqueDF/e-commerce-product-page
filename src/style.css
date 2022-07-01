@@ -793,6 +793,10 @@ footer {
 		opacity: 50%;
 	}
 
+	.product-quantity-control button {
+		cursor: pointer;
+	}
+
 	button.add-to-cart:hover {
 		opacity: 70%;
 	}
