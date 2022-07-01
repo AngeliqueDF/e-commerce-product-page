@@ -2,12 +2,14 @@
 	font-family: "Kumbh Sans";
 	src: url("./fonts/Kumbh_Sans/static/KumbhSans-Regular.ttf");
 	font-weight: 400;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Kumbh Sans";
 	src: url("./fonts/Kumbh_Sans/static/KumbhSans-Bold.ttf");
 	font-weight: 700;
+	font-display: swap;
 }
 
 :root {
@@ -43,7 +45,7 @@ button {
 	background: none;
 	border: none;
 	padding: 0;
-	font-family: "Kumbh Sans";
+	font-family: "Kumbh Sans", sans-serif;
 }
 
 a {
@@ -55,7 +57,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-	font-family: "Kumbh Sans";
+	font-family: "Kumbh Sans", sans-serif;
 	color: var(--grayish-blue);
 	box-sizing: border-box;
 }
@@ -485,15 +487,6 @@ footer {
 }
 
 @media screen and (min-width: 1440px) {
-	#shopping-cart-toggle:hover,
-	.close-lightbox:hover,
-	.image-thumbnails > img:hover,
-	.product-image-controller,
-	.thumbnail-container,
-	button.add-to-cart:hover,
-	#avatar:hover {
-		cursor: pointer;
-	}
 	header {
 		width: 80%;
 		padding: 1rem 1rem 0.6rem;
@@ -538,19 +531,13 @@ footer {
 
 	.header-links li {
 		margin: 0rem 2rem 0rem 0rem;
-		padding: 2rem 0 calc(2rem - 4px);
 		border-block-end: 4px solid transparent;
-	}
-
-	.header-links li:hover {
-		border-block-end: 4px solid var(--orange);
-	}
-	.header-links li:hover a {
-		color: var(--dark-grayish-blue);
 	}
 
 	.header-menu a {
 		color: var(--grayish-blue);
+		display: inline-block;
+		padding: 2rem 0 calc(2rem - 4px);
 	}
 
 	#shopping-cart-toggle {
@@ -559,10 +546,6 @@ footer {
 
 	.tooltip {
 		margin-inline-end: 3rem;
-	}
-
-	#avatar:hover {
-		border: 2px solid var(--orange);
 	}
 
 	#shopping-cart {
@@ -625,14 +608,6 @@ footer {
 
 	img.selected-thumbnail {
 		border: 3px solid var(--orange);
-	}
-
-	.image-thumbnails > img:hover {
-		opacity: 70%;
-	}
-
-	.image-thumbnails > img:active {
-		opacity: unset;
 	}
 
 	.product-images,
@@ -699,23 +674,12 @@ footer {
 		background-size: 100%;
 	}
 
-	.close-lightbox:hover {
-		background-color: transparent;
-		background-image: url("./images/icon-close-orange.svg");
-	}
-
 	.lightbox .previous-image {
 		left: -3%;
-	}
-	.lightbox .previous-image:hover {
-		background-image: url("./images/icon-previous-orange.svg");
 	}
 
 	.lightbox .next-image {
 		right: -3%;
-	}
-	.lightbox .next-image:hover {
-		background-image: url("./images/icon-next-orange.svg");
 	}
 
 	.lightbox .image-thumbnails {
@@ -807,9 +771,6 @@ footer {
 		width: 60%;
 		height: 100%;
 	}
-	button.add-to-cart:hover {
-		opacity: 70%;
-	}
 
 	footer {
 		position: absolute;
@@ -818,3 +779,105 @@ footer {
 		right: 0;
 	}
 }
+
+/* HOVER COMPATIBLE DEVICES */
+@media (any-hover: hover) {
+	.header-links li:hover {
+		border-block-end: 4px solid var(--orange);
+	}
+	.header-links li:hover a {
+		color: var(--dark-grayish-blue);
+	}
+
+	#shopping-cart-toggle:hover,
+	.close-lightbox:hover,
+	.image-thumbnails > img:hover,
+	.product-image-controller,
+	.thumbnail-container,
+	button.add-to-cart:hover,
+	#avatar:hover {
+		cursor: pointer;
+	}
+
+	#avatar:hover {
+		border: 2px solid var(--orange);
+	}
+
+	.image-thumbnails > img:hover,
+	.thumbnail-container:hover {
+		opacity: 90%;
+	}
+
+	button.add-to-cart:hover {
+		opacity: 70%;
+	}
+
+	.close-lightbox:hover {
+		background-color: transparent;
+		background-image: url("./images/icon-close-orange.svg");
+	}
+
+	.lightbox .previous-image:hover {
+		background-image: url("./images/icon-previous-orange.svg");
+	}
+
+	.lightbox .next-image:hover {
+		background-image: url("./images/icon-next-orange.svg");
+	}
+
+	.lightbox .previous-image:active {
+		background-image: url("./images/icon-previous.svg");
+	}
+
+	.lightbox .next-image:active {
+		background-image: url("./images/icon-next.svg");
+	}
+}
+/* END HOVER COMPATIBLE DEVICES */
+
+/* TOUCH SCREENS */
+@media (hover: none) {
+	.header-links li:active {
+		border-block-end: 4px solid var(--orange);
+	}
+	.header-links li:active a {
+		color: var(--dark-grayish-blue);
+	}
+
+	#shopping-cart-toggle:active,
+	.close-lightbox:active,
+	.image-thumbnails > img:active,
+	.product-image-controller,
+	.thumbnail-container,
+	button.add-to-cart:active,
+	#avatar:active {
+		cursor: pointer;
+	}
+
+	#avatar:active {
+		border: 2px solid var(--orange);
+	}
+
+	.image-thumbnails > img:active,
+	.thumbnail-container:active {
+		opacity: 70%;
+	}
+
+	button.add-to-cart:active {
+		opacity: 70%;
+	}
+
+	.close-lightbox:active {
+		background-color: transparent;
+		background-image: url("./images/icon-close-orange.svg");
+	}
+
+	.lightbox .previous-image:active {
+		background-image: url("./images/icon-previous-orange.svg");
+	}
+
+	.lightbox .next-image:active {
+		background-image: url("./images/icon-next-orange.svg");
+	}
+}
+/* END TOUCH SCREENS */
