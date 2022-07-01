@@ -5,8 +5,6 @@ class MobileCarousel {
 		nextImageButtonSelector,
 		largeImagesPaths
 	) {
-		console.log(this);
-
 		this.largeImageElement = document.querySelector(largeImageSelector);
 
 		this.previousImageButton = document.querySelector(
@@ -68,8 +66,6 @@ class MobileCarousel {
 		const indexOfImage = this.largeImagesPaths.findIndex(
 			(image) => image === this.currentLargeImgPath()
 		);
-
-		console.trace(this.currentLargeImgPath());
 
 		// If the last image is currently displayed, we replace it by the first one.
 		if (indexOfImage === this.largeImagesPaths.length - 1) {
