@@ -46,14 +46,13 @@ window.addEventListener("DOMContentLoaded", () => {
 		THUMBNAIL_IMAGES_PATHS[0]
 	);
 
-	if (window.innerWidth < 1440) {
-		const mobileCarousel = new MobileCarousel(
-			LARGE_IMAGE_SELECTOR,
-			PREVIOUS_BUTTON_SELECTOR,
-			NEXT_BUTTON_SELECTOR,
-			LARGE_IMAGES_PATHS
-		);
-	}
+	const mobileCarousel = new MobileCarousel(
+		LARGE_IMAGE_SELECTOR,
+		PREVIOUS_BUTTON_SELECTOR,
+		NEXT_BUTTON_SELECTOR,
+		LARGE_IMAGES_PATHS
+	);
+
 
 	document
 		.querySelector(LARGE_IMAGE_SELECTOR)
