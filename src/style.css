@@ -603,8 +603,8 @@ footer {
 	}
 
 	.thumbnail-container {
-		width: 7rem;
-		height: 7rem;
+		width: 6rem;
+		height: 6rem;
 	}
 	.thumbnail-container img {
 		border: 3px solid transparent;
