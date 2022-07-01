@@ -10,21 +10,22 @@ class Lightbox extends DesktopCarousel {
 		nextImageButtonSelector,
 		lightboxOverlaySelector,
 		lightboxCloseButtonSelector,
-		THUMBNAIL_IMAGES_PATHS
+		THUMBNAIL_IMAGES_PATHS,
+		clickedLargeImageSelector
 	) {
 		// Render the overlay
 		const lightboxOverlay = document.createElement("div");
 		lightboxOverlay.classList.add("lightbox-overlay");
 		document.body.querySelector("main").appendChild(lightboxOverlay);
 
-		const LIGHTBOX_TEMPLATE = (thumbnails) => `
+		const LIGHTBOX_TEMPLATE = (clickedLargeImageSelector, thumbnails) => `
 				<button class="close-lightbox" title="Close lightbox"></button>
 				<button class="product-image-controller previous-image"></button>
 				<button class="product-image-controller next-image"></button>
 
 				<img
 					class="large-product-image"
-					src=${largeImageOne}
+					src=${document.querySelector(clickedLargeImageSelector).src}
 					alt=""
 				/>
 
@@ -41,7 +42,10 @@ class Lightbox extends DesktopCarousel {
     	`;
 		// Render the lightbox
 		const lightboxElement = document.createElement("div");
-		lightboxElement.innerHTML = LIGHTBOX_TEMPLATE(THUMBNAIL_IMAGES_PATHS);
+		lightboxElement.innerHTML = LIGHTBOX_TEMPLATE(
+			clickedLargeImageSelector,
+			THUMBNAIL_IMAGES_PATHS
+		);
 		lightboxElement.classList.add("lightbox");
 		document.querySelector("main").appendChild(lightboxElement);
 
@@ -57,6 +61,7 @@ class Lightbox extends DesktopCarousel {
 
 		this.initializeEvents();
 	}
+
 	initializeEvents() {
 		document
 			.querySelector(this.previousImageButtonSelector)
