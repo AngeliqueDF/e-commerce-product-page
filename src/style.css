@@ -818,6 +818,18 @@ footer {
 		border-radius: 12px;
 	}
 
+	/* If the thumbnail is already selected (in the simple desktop carousel or the lightbox), reset the opacity on hover */
+	.thumbnail-container.selected-thumbnail:hover {
+		opacity: unset;
+	}
+	/* If the thumbnail is already selected (in the simple desktop carousel or the lightbox), also make the overlay transparent and change the pointer to deter users from clicking the image and sending another request */
+	.thumbnail-container.selected-thumbnail:hover::after,
+	.lightbox .thumbnail-container.selected-thumbnail:hover::after {
+		background-color: transparent;
+		border: 3px solid var(--orange);
+		cursor: not-allowed;
+	}
+
 	.close-lightbox:hover {
 		background-color: transparent;
 		background-image: url("./images/icon-close-orange.svg");
