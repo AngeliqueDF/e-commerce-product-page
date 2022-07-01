@@ -1,4 +1,5 @@
 import DesktopCarousel from "./DesktopCarousel.js";
+import Lightbox from "./Lightbox";
 import MobileCarousel from "./MobileCarousel.js";
 import ShoppingCart from "./ShoppingCart.js";
 import { toggleHide } from "./helpers.js";
@@ -53,41 +54,26 @@ window.addEventListener("DOMContentLoaded", () => {
 		LARGE_IMAGES_PATHS
 	);
 
+	const desktopCarousel = new DesktopCarousel(
+		LARGE_IMAGE_SELECTOR,
+		THUMBNAILS_ROW_SELECTOR,
+		LARGE_IMAGES_PATHS
+	);
 
 	document
 		.querySelector(LARGE_IMAGE_SELECTOR)
 		.addEventListener("click", (e) => {
 			// Check for the current screen width in case the user clicks the large image after resizing the window
 			if (window.innerWidth < 1440) return;
-			const desktopCarousel = new DesktopCarousel(
-				LARGE_IMAGE_SELECTOR,
-				THUMBNAILS_ROW_SELECTOR,
-				PREVIOUS_BUTTON_SELECTOR,
-				NEXT_BUTTON_SELECTOR,
-				LARGE_IMAGES_PATHS
-			);
-			desktopCarousel.renderLightBox(THUMBNAIL_IMAGES_PATHS);
-			desktopCarousel.renderLightboxOverlay();
-
-			// TODO either create a Lightbox class or move this functionality to DesktopCarousel
-			const lightboxOverlay = document.querySelector(".lightbox-overlay");
-			const lightboxCloseButton = document.querySelector(".close-lightbox");
-			// When the overlay is clicked, we remove it as well as the the lightbox
-			lightboxOverlay.addEventListener("click", () => {
-				desktopCarousel.closeLightbox();
-			});
-			lightboxCloseButton.addEventListener("click", () => {
-				desktopCarousel.closeLightbox();
-			});
-
-			const lightbox = new DesktopCarousel(
-				".lightbox " + LARGE_IMAGE_SELECTOR,
-				".lightbox " + ".thumbnail-container",
+			const lightbox = new Lightbox(
+				".lightbox " + "img" + LARGE_IMAGE_SELECTOR,
+				".lightbox " + ".image-thumbnails .thumbnail-container",
+				LARGE_IMAGES_PATHS,
 				".lightbox " + PREVIOUS_BUTTON_SELECTOR,
 				".lightbox " + NEXT_BUTTON_SELECTOR,
-				LARGE_IMAGES_PATHS
+				".lightbox-overlay",
+				".close-lightbox",
+				THUMBNAIL_IMAGES_PATHS,
 			);
-
-			lightbox.initializeButtons();
 		});
 });
