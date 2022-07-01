@@ -606,7 +606,8 @@ footer {
 		height: 7rem;
 	}
 
-	img.selected-thumbnail {
+	img.selected-thumbnail,
+	.lightbox .image-thumbnails img.selected-thumbnail {
 		border: 3px solid var(--orange);
 	}
 
