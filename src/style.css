@@ -835,3 +835,49 @@ footer {
 }
 /* END HOVER COMPATIBLE DEVICES */
 
+/* TOUCH SCREENS */
+@media (hover: none) {
+	.header-links li:active {
+		border-block-end: 4px solid var(--orange);
+	}
+	.header-links li:active a {
+		color: var(--dark-grayish-blue);
+	}
+
+	#shopping-cart-toggle:active,
+	.close-lightbox:active,
+	.image-thumbnails > img:active,
+	.product-image-controller,
+	.thumbnail-container,
+	button.add-to-cart:active,
+	#avatar:active {
+		cursor: pointer;
+	}
+
+	#avatar:active {
+		border: 2px solid var(--orange);
+	}
+
+	.image-thumbnails > img:active,
+	.thumbnail-container:active {
+		opacity: 70%;
+	}
+
+	button.add-to-cart:active {
+		opacity: 70%;
+	}
+
+	.close-lightbox:active {
+		background-color: transparent;
+		background-image: url("./images/icon-close-orange.svg");
+	}
+
+	.lightbox .previous-image:active {
+		background-image: url("./images/icon-previous-orange.svg");
+	}
+
+	.lightbox .next-image:active {
+		background-image: url("./images/icon-next-orange.svg");
+	}
+}
+/* END TOUCH SCREENS */
