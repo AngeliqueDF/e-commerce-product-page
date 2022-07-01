@@ -5,8 +5,6 @@ class MobileCarousel {
 		nextImageButtonSelector,
 		largeImagesPaths
 	) {
-		console.log(this);
-
 		this.largeImageElement = document.querySelector(largeImageSelector);
 
 		this.previousImageButton = document.querySelector(
@@ -56,7 +54,7 @@ class MobileCarousel {
 		// If the first image in the list is displayed, we replace it with the last image.
 		if (indexOfImage === 0) {
 			this.replaceLargeImagePath(
-				`/src/images/image-product-${this.largeImagesPaths.length}.jpg`
+				`${this.largeImagesPaths[this.largeImagesPaths.length - 1]}`
 			);
 		} else {
 			const newIndex = indexOfImage - 1;
@@ -68,8 +66,6 @@ class MobileCarousel {
 		const indexOfImage = this.largeImagesPaths.findIndex(
 			(image) => image === this.currentLargeImgPath()
 		);
-
-		console.trace(this.currentLargeImgPath());
 
 		// If the last image is currently displayed, we replace it by the first one.
 		if (indexOfImage === this.largeImagesPaths.length - 1) {
