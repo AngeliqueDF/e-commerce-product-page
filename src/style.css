@@ -780,7 +780,9 @@ footer {
 	.product-image-controller,
 	.thumbnail-container,
 	button.add-to-cart:hover,
-	#avatar:hover {
+	#avatar:hover,
+	.product-quantity-control button,
+	.large-product-image:not(.lightbox .large-product-image) {
 		cursor: pointer;
 	}
 
@@ -791,10 +793,6 @@ footer {
 	/* Make the desktop thumbnail slightly transparent on hover */
 	.thumbnail-container:hover {
 		opacity: 50%;
-	}
-
-	.product-quantity-control button {
-		cursor: pointer;
 	}
 
 	button.add-to-cart:hover {
