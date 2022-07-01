@@ -610,10 +610,6 @@ footer {
 		border: 3px solid var(--orange);
 	}
 
-	.image-thumbnails > img:active {
-		opacity: unset;
-	}
-
 	.product-images,
 	.lightbox {
 		grid-column-start: 1;
