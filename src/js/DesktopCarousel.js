@@ -1,36 +1,5 @@
-import largeImageOne from "./../images/image-product-1.jpg";
-
 class DesktopCarousel {
-	LIGHTBOX_TEMPLATE = (thumbnails) => `
-	   <button class="close-lightbox" title="Close lightbox"></button>
-	   <button class="product-image-controller previous-image"></button>
-	   <button class="product-image-controller next-image"></button>
-	
-	   <img
-	     class="large-product-image"
-	     src=${largeImageOne}
-	     alt=""
-	   />
-	
-	   <div class="image-thumbnails">
-		 ${thumbnails
-				.map(
-					(thumbnail) =>
-						'<div class="thumbnail-container"><img src="' +
-						thumbnail +
-						'" alt="" /></div>'
-				)
-				.join("")}
-	   </div>
-	 `;
-	constructor(
-		largeImageSelector,
-		thumbnailsRowSelector,
-		previousImageButtonSelector,
-		nextImageButtonSelector,
-		largeImagesPaths
-	) {
-		// this.lightboxDisplayed = false;
+	constructor(largeImageSelector, thumbnailsRowSelector, largeImagesPaths) {
 		this.largeImageElement = document.querySelector(largeImageSelector);
 
 		/**
@@ -117,26 +86,6 @@ class DesktopCarousel {
 			const newIndex = indexOfImage + 1;
 			this.replaceLargeImagePath(`${this.largeImagesPaths[newIndex]}`);
 		}
-	}
-
-	renderLightboxOverlay() {
-		const div = document.createElement("div");
-		div.classList.add("lightbox-overlay");
-		document.body.appendChild(div);
-	}
-
-	renderLightBox(thumbnails) {
-		const div = document.createElement("div");
-		div.innerHTML = this.LIGHTBOX_TEMPLATE(thumbnails);
-		div.classList.add("lightbox");
-		document.body.appendChild(div);
-	}
-
-	closeLightbox() {
-		const lightboxElement = document.querySelector(".lightbox");
-		const lightboxOverlay = document.querySelector(".lightbox-overlay");
-		lightboxElement.remove();
-		lightboxOverlay.remove();
 	}
 }
 
