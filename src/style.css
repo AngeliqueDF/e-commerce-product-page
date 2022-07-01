@@ -594,6 +594,11 @@ footer {
 	.product-image-controller {
 		display: none;
 	}
+
+	.large-product-image {
+		border-radius: 12px;
+	}
+
 	.image-thumbnails {
 		grid-row-start: 2;
 		display: flex;
