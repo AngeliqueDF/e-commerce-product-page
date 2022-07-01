@@ -2,12 +2,14 @@
 	font-family: "Kumbh Sans";
 	src: url("./fonts/Kumbh_Sans/static/KumbhSans-Regular.ttf");
 	font-weight: 400;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "Kumbh Sans";
 	src: url("./fonts/Kumbh_Sans/static/KumbhSans-Bold.ttf");
 	font-weight: 700;
+	font-display: swap;
 }
 
 :root {
