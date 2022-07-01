@@ -74,6 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				".lightbox-overlay",
 				".close-lightbox",
 				THUMBNAIL_IMAGES_PATHS,
+				LARGE_IMAGE_SELECTOR
 			);
 		});
 });
